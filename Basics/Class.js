@@ -8,9 +8,9 @@ function Person (firstName,otherNames,dob,nationality){
     this.dob = dob;
     this.nationality = nationality;
 
-    function sayName(){
-        console.log(this.name);
-    }
+    this.sayName = function(){
+        console.log("My name is "+this.firstName+" "+this.otherNames);
+    } 
 
 }
 
@@ -21,7 +21,8 @@ Person.prototype.fullname = function (){
 
 var opoku = new Person("Kwame","Koranteng Opoku","2001-04-31","Ghanaian");
 
-console.log(opoku.fullname());
+opoku.sayName()
+
 
 
 // Way 2 : ES6 Classes
@@ -55,12 +56,6 @@ var payFees = new Transaction("18-04-2024","18-04-2024",1000,"Bank","Ghc");
 
 payFees.sayAmount() // outputs "Ghc 1000"
 console.log(payFees.bankNumber)  //outputs 5
-
-
-
-function Test (){
- return new Set();
-}
 
 
 
